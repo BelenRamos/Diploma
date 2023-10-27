@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_RRHHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Clientes_Telefonos" Relationship="Self.FK__Clientes___id_cl__398D8EEE" FromRole="Clientes" ToRole="Clientes_Telefonos" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Clientes" FromRole="Clientes" ToRole="Ofertas_Laborales" />
+  </EntityType>
+  <EntityType Name="Clientes_Telefonos">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+      <PropertyRef Name="telefono" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Clientes___id_cl__398D8EEE" FromRole="Clientes_Telefonos" ToRole="Clientes" />
+  </EntityType>
+  <EntityType Name="Consultores">
+    <Key>
+      <PropertyRef Name="legajo" />
+    </Key>
+    <Property Name="legajo" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Consultor_Asignado" FromRole="Consultores" ToRole="Ofertas_Laborales" />
+  </EntityType>
+  <EntityType Name="Entrevistas">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Turnos" Relationship="Self.FK__Turnos__nro_entr__5535A963" FromRole="Entrevistas" ToRole="Turnos" />
+    <NavigationProperty Name="Perfiles" Relationship="Self.Entrevistas_Perfiles" FromRole="Entrevistas" ToRole="Perfiles" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="designacion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Estados" FromRole="Estados" ToRole="Ofertas_Laborales" />
+  </EntityType>
+  <EntityType Name="Evaluaciones">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="resultado" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="fechaEvaluacion" Type="DateTime" Precision="0" />
+    <Property Name="profesional" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tipo_Evaluaciones" Relationship="Self.Evaluaciones_Tipos" FromRole="Evaluaciones" ToRole="Tipo_Evaluaciones" />
+    <NavigationProperty Name="Postulantes" Relationship="Self.Evaluciones_Postulantes" FromRole="Evaluaciones" ToRole="Postulantes" />
+  </EntityType>
+  <EntityType Name="Ofertas_Laborales">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+    <Property Name="fechaPublicacion" Type="DateTime" Precision="0" />
+    <Property Name="fechaCierre" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Clientes" Relationship="Self.OL_Clientes" FromRole="Ofertas_Laborales" ToRole="Clientes" />
+    <NavigationProperty Name="Consultores" Relationship="Self.OL_Consultor_Asignado" FromRole="Ofertas_Laborales" ToRole="Consultores" />
+    <NavigationProperty Name="Estados" Relationship="Self.OL_Estados" FromRole="Ofertas_Laborales" ToRole="Estados" />
+    <NavigationProperty Name="Perfiles" Relationship="Self.OL_Perfiles" FromRole="Ofertas_Laborales" ToRole="Perfiles" />
+    <NavigationProperty Name="Postulantes" Relationship="Self.OL_Postulantes" FromRole="Ofertas_Laborales" ToRole="Postulantes" />
+    <NavigationProperty Name="Requisitos" Relationship="Self.OL_Requisitos" FromRole="Ofertas_Laborales" ToRole="Requisitos" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Entrevistas" Relationship="Self.Entrevistas_Perfiles" FromRole="Perfiles" ToRole="Entrevistas" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Perfiles" FromRole="Perfiles" ToRole="Ofertas_Laborales" />
+    <NavigationProperty Name="Postulantes" Relationship="Self.Perfiles_Postulantes" FromRole="Perfiles" ToRole="Postulantes" />
+  </EntityType>
+  <EntityType Name="Postulantes">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="esCandidato" Type="Byte" />
+    <NavigationProperty Name="Evaluaciones" Relationship="Self.Evaluciones_Postulantes" FromRole="Postulantes" ToRole="Evaluaciones" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Postulantes" FromRole="Postulantes" ToRole="Ofertas_Laborales" />
+    <NavigationProperty Name="Perfiles" Relationship="Self.Perfiles_Postulantes" FromRole="Postulantes" ToRole="Perfiles" />
+  </EntityType>
+  <EntityType Name="Psicologos">
+    <Key>
+      <PropertyRef Name="matricula" />
+    </Key>
+    <Property Name="matricula" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Turnos" Relationship="Self.FK__Turnos__mat_psic__5629CD9C" FromRole="Psicologos" ToRole="Turnos" />
+  </EntityType>
+  <EntityType Name="Requisitos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ofertas_Laborales" Relationship="Self.OL_Requisitos" FromRole="Requisitos" ToRole="Ofertas_Laborales" />
+  </EntityType>
+  <EntityType Name="Tipo_Evaluaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="detalle" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Evaluaciones" Relationship="Self.Evaluaciones_Tipos" FromRole="Tipo_Evaluaciones" ToRole="Evaluaciones" />
+  </EntityType>
+  <EntityType Name="Turnos">
+    <Key>
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="horario" />
+      <PropertyRef Name="mat_psicologo" />
+    </Key>
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horario" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="disponible" Type="Byte" />
+    <Property Name="nro_entrevista" Type="Int32" />
+    <Property Name="mat_psicologo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Entrevistas" Relationship="Self.FK__Turnos__nro_entr__5535A963" FromRole="Turnos" ToRole="Entrevistas" />
+    <NavigationProperty Name="Psicologos" Relationship="Self.FK__Turnos__mat_psic__5629CD9C" FromRole="Turnos" ToRole="Psicologos" />
+  </EntityType>
+  <Association Name="FK__Clientes___id_cl__398D8EEE">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Clientes_Telefonos" Type="Self.Clientes_Telefonos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Clientes_Telefonos">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Turnos__nro_entr__5535A963">
+    <End Role="Entrevistas" Type="Self.Entrevistas" Multiplicity="0..1" />
+    <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entrevistas">
+        <PropertyRef Name="numero" />
+      </Principal>
+      <Dependent Role="Turnos">
+        <PropertyRef Name="nro_entrevista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Turnos__mat_psic__5629CD9C">
+    <End Role="Psicologos" Type="Self.Psicologos" Multiplicity="1" />
+    <End Role="Turnos" Type="Self.Turnos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Psicologos">
+        <PropertyRef Name="matricula" />
+      </Principal>
+      <Dependent Role="Turnos">
+        <PropertyRef Name="mat_psicologo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Entrevistas_Perfiles">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+    <End Role="Entrevistas" Type="Self.Entrevistas" Multiplicity="*" />
+  </Association>
+  <Association Name="Evaluaciones_Tipos">
+    <End Role="Tipo_Evaluaciones" Type="Self.Tipo_Evaluaciones" Multiplicity="*" />
+    <End Role="Evaluaciones" Type="Self.Evaluaciones" Multiplicity="*" />
+  </Association>
+  <Association Name="Evaluciones_Postulantes">
+    <End Role="Evaluaciones" Type="Self.Evaluaciones" Multiplicity="*" />
+    <End Role="Postulantes" Type="Self.Postulantes" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Consultor_Asignado">
+    <End Role="Consultores" Type="Self.Consultores" Multiplicity="*" />
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Estados">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="*" />
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Perfiles">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Postulantes">
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+    <End Role="Postulantes" Type="Self.Postulantes" Multiplicity="*" />
+  </Association>
+  <Association Name="OL_Requisitos">
+    <End Role="Requisitos" Type="Self.Requisitos" Multiplicity="*" />
+    <End Role="Ofertas_Laborales" Type="Self.Ofertas_Laborales" Multiplicity="*" />
+  </Association>
+  <Association Name="Perfiles_Postulantes">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+    <End Role="Postulantes" Type="Self.Postulantes" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="db_RRHHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Clientes_Telefonos" EntityType="Self.Clientes_Telefonos" />
+    <EntitySet Name="Consultores" EntityType="Self.Consultores" />
+    <EntitySet Name="Entrevistas" EntityType="Self.Entrevistas" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" />
+    <EntitySet Name="Evaluaciones" EntityType="Self.Evaluaciones" />
+    <EntitySet Name="Ofertas_Laborales" EntityType="Self.Ofertas_Laborales" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" />
+    <EntitySet Name="Postulantes" EntityType="Self.Postulantes" />
+    <EntitySet Name="Psicologos" EntityType="Self.Psicologos" />
+    <EntitySet Name="Requisitos" EntityType="Self.Requisitos" />
+    <EntitySet Name="Tipo_Evaluaciones" EntityType="Self.Tipo_Evaluaciones" />
+    <EntitySet Name="Turnos" EntityType="Self.Turnos" />
+    <AssociationSet Name="FK__Clientes___id_cl__398D8EEE" Association="Self.FK__Clientes___id_cl__398D8EEE">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Clientes_Telefonos" EntitySet="Clientes_Telefonos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Turnos__nro_entr__5535A963" Association="Self.FK__Turnos__nro_entr__5535A963">
+      <End Role="Entrevistas" EntitySet="Entrevistas" />
+      <End Role="Turnos" EntitySet="Turnos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Turnos__mat_psic__5629CD9C" Association="Self.FK__Turnos__mat_psic__5629CD9C">
+      <End Role="Psicologos" EntitySet="Psicologos" />
+      <End Role="Turnos" EntitySet="Turnos" />
+    </AssociationSet>
+    <AssociationSet Name="Entrevistas_Perfiles" Association="Self.Entrevistas_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Entrevistas" EntitySet="Entrevistas" />
+    </AssociationSet>
+    <AssociationSet Name="Evaluaciones_Tipos" Association="Self.Evaluaciones_Tipos">
+      <End Role="Tipo_Evaluaciones" EntitySet="Tipo_Evaluaciones" />
+      <End Role="Evaluaciones" EntitySet="Evaluaciones" />
+    </AssociationSet>
+    <AssociationSet Name="Evaluciones_Postulantes" Association="Self.Evaluciones_Postulantes">
+      <End Role="Evaluaciones" EntitySet="Evaluaciones" />
+      <End Role="Postulantes" EntitySet="Postulantes" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Clientes" Association="Self.OL_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Consultor_Asignado" Association="Self.OL_Consultor_Asignado">
+      <End Role="Consultores" EntitySet="Consultores" />
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Estados" Association="Self.OL_Estados">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Perfiles" Association="Self.OL_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Postulantes" Association="Self.OL_Postulantes">
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+      <End Role="Postulantes" EntitySet="Postulantes" />
+    </AssociationSet>
+    <AssociationSet Name="OL_Requisitos" Association="Self.OL_Requisitos">
+      <End Role="Requisitos" EntitySet="Requisitos" />
+      <End Role="Ofertas_Laborales" EntitySet="Ofertas_Laborales" />
+    </AssociationSet>
+    <AssociationSet Name="Perfiles_Postulantes" Association="Self.Perfiles_Postulantes">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Postulantes" EntitySet="Postulantes" />
+    </AssociationSet>
+    <FunctionImport Name="fnCliente" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnCliente_Result)" />
+  </EntityContainer>
+  <ComplexType Name="fnCliente_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="telefono" Nullable="true" MaxLength="20" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,15 @@
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Controladora.dll.config
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Controladora.dll
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Controladora.pdb
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Datos.dll
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\EntityFramework.dll
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Datos.pdb
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\Datos.dll.config
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\EntityFramework.xml
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\obj\Debug\Controladora.csproj.AssemblyReference.cache
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\obj\Debug\Controladora.csproj.CopyComplete
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\obj\Debug\Controladora.dll
+C:\Users\belen\OneDrive\Documentos\Repositorio\ProyectoRRHH\Controladora\obj\Debug\Controladora.pdb

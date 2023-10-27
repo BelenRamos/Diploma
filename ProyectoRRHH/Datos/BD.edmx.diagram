@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07d414dd9417402cb4498bc86ffa3dc9" Name="Diagram1">
+        <EntityTypeShape EntityType="db_RRHHModel.Clientes" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Clientes_Telefonos" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Consultores" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Entrevistas" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Estados" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Evaluaciones" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Ofertas_Laborales" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Perfiles" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Postulantes" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Psicologos" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Requisitos" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Tipo_Evaluaciones" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_RRHHModel.Turnos" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="db_RRHHModel.FK__Clientes___id_cl__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.FK__Turnos__nro_entr__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.FK__Turnos__mat_psic__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.Entrevistas_Perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.Evaluaciones_Tipos" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.Evaluciones_Postulantes" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Consultor_Asignado" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Postulantes" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.OL_Requisitos" ManuallyRouted="false" />
+        <AssociationConnector Association="db_RRHHModel.Perfiles_Postulantes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

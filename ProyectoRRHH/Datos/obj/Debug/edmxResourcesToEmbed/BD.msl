@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_RRHHModelStoreContainer" CdmEntityContainer="db_RRHHEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="db_RRHHModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes_Telefonos">
+      <EntityTypeMapping TypeName="db_RRHHModel.Clientes_Telefonos">
+        <MappingFragment StoreEntitySet="Clientes_Telefonos">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultores">
+      <EntityTypeMapping TypeName="db_RRHHModel.Consultores">
+        <MappingFragment StoreEntitySet="Consultores">
+          <ScalarProperty Name="legajo" ColumnName="legajo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entrevistas">
+      <EntityTypeMapping TypeName="db_RRHHModel.Entrevistas">
+        <MappingFragment StoreEntitySet="Entrevistas">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="db_RRHHModel.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="designacion" ColumnName="designacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evaluaciones">
+      <EntityTypeMapping TypeName="db_RRHHModel.Evaluaciones">
+        <MappingFragment StoreEntitySet="Evaluaciones">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="fechaEvaluacion" ColumnName="fechaEvaluacion" />
+          <ScalarProperty Name="profesional" ColumnName="profesional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ofertas_Laborales">
+      <EntityTypeMapping TypeName="db_RRHHModel.Ofertas_Laborales">
+        <MappingFragment StoreEntitySet="Ofertas_Laborales">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaCierre" ColumnName="fechaCierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="db_RRHHModel.Perfiles">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postulantes">
+      <EntityTypeMapping TypeName="db_RRHHModel.Postulantes">
+        <MappingFragment StoreEntitySet="Postulantes">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="esCandidato" ColumnName="esCandidato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Psicologos">
+      <EntityTypeMapping TypeName="db_RRHHModel.Psicologos">
+        <MappingFragment StoreEntitySet="Psicologos">
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisitos">
+      <EntityTypeMapping TypeName="db_RRHHModel.Requisitos">
+        <MappingFragment StoreEntitySet="Requisitos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Evaluaciones">
+      <EntityTypeMapping TypeName="db_RRHHModel.Tipo_Evaluaciones">
+        <MappingFragment StoreEntitySet="Tipo_Evaluaciones">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turnos">
+      <EntityTypeMapping TypeName="db_RRHHModel.Turnos">
+        <MappingFragment StoreEntitySet="Turnos">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="horario" ColumnName="horario" />
+          <ScalarProperty Name="disponible" ColumnName="disponible" />
+          <ScalarProperty Name="nro_entrevista" ColumnName="nro_entrevista" />
+          <ScalarProperty Name="mat_psicologo" ColumnName="mat_psicologo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Entrevistas_Perfiles" TypeName="db_RRHHModel.Entrevistas_Perfiles" StoreEntitySet="Entrevistas_Perfiles">
+      <EndProperty Name="Perfiles">
+        <ScalarProperty Name="id" ColumnName="id_perfil" />
+      </EndProperty>
+      <EndProperty Name="Entrevistas">
+        <ScalarProperty Name="numero" ColumnName="nro_entrevista" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Evaluaciones_Tipos" TypeName="db_RRHHModel.Evaluaciones_Tipos" StoreEntitySet="Evaluaciones_Tipos">
+      <EndProperty Name="Tipo_Evaluaciones">
+        <ScalarProperty Name="id" ColumnName="id_tipo" />
+      </EndProperty>
+      <EndProperty Name="Evaluaciones">
+        <ScalarProperty Name="numero" ColumnName="nro_evaluacion" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Evaluciones_Postulantes" TypeName="db_RRHHModel.Evaluciones_Postulantes" StoreEntitySet="Evaluciones_Postulantes">
+      <EndProperty Name="Evaluaciones">
+        <ScalarProperty Name="numero" ColumnName="nro_evaluacion" />
+      </EndProperty>
+      <EndProperty Name="Postulantes">
+        <ScalarProperty Name="numero" ColumnName="nro_postulante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Clientes" TypeName="db_RRHHModel.OL_Clientes" StoreEntitySet="OL_Clientes">
+      <EndProperty Name="Clientes">
+        <ScalarProperty Name="id" ColumnName="id_cliente" />
+      </EndProperty>
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Consultor_Asignado" TypeName="db_RRHHModel.OL_Consultor_Asignado" StoreEntitySet="OL_Consultor_Asignado">
+      <EndProperty Name="Consultores">
+        <ScalarProperty Name="legajo" ColumnName="legajo_consultor" />
+      </EndProperty>
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Estados" TypeName="db_RRHHModel.OL_Estados" StoreEntitySet="OL_Estados">
+      <EndProperty Name="Estados">
+        <ScalarProperty Name="codigo" ColumnName="codigo_estado" />
+      </EndProperty>
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Perfiles" TypeName="db_RRHHModel.OL_Perfiles" StoreEntitySet="OL_Perfiles">
+      <EndProperty Name="Perfiles">
+        <ScalarProperty Name="id" ColumnName="id_perfil" />
+      </EndProperty>
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Postulantes" TypeName="db_RRHHModel.OL_Postulantes" StoreEntitySet="OL_Postulantes">
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+      <EndProperty Name="Postulantes">
+        <ScalarProperty Name="numero" ColumnName="nro_postulante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OL_Requisitos" TypeName="db_RRHHModel.OL_Requisitos" StoreEntitySet="OL_Requisitos">
+      <EndProperty Name="Requisitos">
+        <ScalarProperty Name="id" ColumnName="id_requisito" />
+      </EndProperty>
+      <EndProperty Name="Ofertas_Laborales">
+        <ScalarProperty Name="numero" ColumnName="nro_OL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Perfiles_Postulantes" TypeName="db_RRHHModel.Perfiles_Postulantes" StoreEntitySet="Perfiles_Postulantes">
+      <EndProperty Name="Perfiles">
+        <ScalarProperty Name="id" ColumnName="id_perfil" />
+      </EndProperty>
+      <EndProperty Name="Postulantes">
+        <ScalarProperty Name="numero" ColumnName="nro_postulante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="fnCliente" FunctionName="db_RRHHModel.Store.fnCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_RRHHModel.fnCliente_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
