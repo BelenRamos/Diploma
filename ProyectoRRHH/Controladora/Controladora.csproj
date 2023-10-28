@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlClientes.cs" />
+    <Compile Include="ctrlCliente.cs" />
     <Compile Include="ctrlOfertaLaboral.cs" />
     <Compile Include="ctrlPerfil.cs" />
     <Compile Include="ctrlPostulante.cs" />

@@ -28,19 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvPerfiles
+            // 
+            this.dgvPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvPerfiles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerfiles.Location = new System.Drawing.Point(12, 12);
+            this.dgvPerfiles.Name = "dgvPerfiles";
+            this.dgvPerfiles.Size = new System.Drawing.Size(240, 150);
+            this.dgvPerfiles.TabIndex = 0;
             // 
             // frmPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvPerfiles);
             this.Name = "frmPerfiles";
-            this.Text = "frmPerfiles";
+            this.Text = "Perfiles";
+            this.Load += new System.EventHandler(this.frmPerfiles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvPerfiles;
     }
 }

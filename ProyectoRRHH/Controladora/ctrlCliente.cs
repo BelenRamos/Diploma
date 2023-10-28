@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Controladora
 {
-    public class ctrlClientes
+    public class ctrlCliente
     {
         //public void ListarClientes(DataGridView dvgClientes)
         //{

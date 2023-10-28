@@ -86,6 +86,15 @@
     <Compile Include="fnCliente_Result.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
+    <Compile Include="fnOfertasLaborales_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fnPerfiles_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fnPostulantes_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ofertas_Laborales.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>

@@ -488,6 +488,43 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="fnOfertasLaborales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="numero" Type="int" />
+                <Property Name="titulo" Type="varchar" MaxLength="50" />
+                <Property Name="descripcion" Type="varchar" MaxLength="100" />
+                <Property Name="estado" Type="varchar" MaxLength="60" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fnPerfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="id" Type="int" />
+                <Property Name="nombre" Type="varchar" MaxLength="50" />
+                <Property Name="descripcion" Type="nvarchar" MaxLength="300" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fnPostulantes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="numero" Type="int" />
+                <Property Name="nombre" Type="varchar" MaxLength="50" />
+                <Property Name="apellido" Type="nvarchar" MaxLength="50" />
+                <Property Name="mail" Type="nvarchar" MaxLength="100" />
+                <Property Name="telefono" Type="nvarchar" MaxLength="20" />
+                <Property Name="perfil" Type="nvarchar" MaxLength="30" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <EntityContainer Name="db_RRHHModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes_Telefonos" EntityType="Self.Clientes_Telefonos" Schema="dbo" store:Type="Tables" />
@@ -893,12 +930,34 @@
             <End Role="Postulantes" EntitySet="Postulantes" />
           </AssociationSet>
           <FunctionImport Name="fnCliente" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnCliente_Result)" />
+          <FunctionImport Name="fnOfertasLaborales" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnOfertasLaborales_Result)" />
+          <FunctionImport Name="fnPerfiles" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnPerfiles_Result)" />
+          <FunctionImport Name="fnPostulantes" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnPostulantes_Result)" />
         </EntityContainer>
         <ComplexType Name="fnCliente_Result">
           <Property Type="Int32" Name="id" Nullable="true" />
           <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="mail" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="telefono" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="fnOfertasLaborales_Result">
+          <Property Type="Int32" Name="numero" Nullable="true" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="estado" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="fnPerfiles_Result">
+          <Property Type="Int32" Name="id" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="fnPostulantes_Result">
+          <Property Type="Int32" Name="numero" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellido" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="perfil" Nullable="true" MaxLength="30" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1118,6 +1177,37 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="mail" ColumnName="mail" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fnOfertasLaborales" FunctionName="db_RRHHModel.Store.fnOfertasLaborales">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_RRHHModel.fnOfertasLaborales_Result">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fnPerfiles" FunctionName="db_RRHHModel.Store.fnPerfiles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_RRHHModel.fnPerfiles_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fnPostulantes" FunctionName="db_RRHHModel.Store.fnPostulantes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_RRHHModel.fnPostulantes_Result">
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="perfil" ColumnName="perfil" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

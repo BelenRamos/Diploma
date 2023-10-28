@@ -216,5 +216,36 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fnOfertasLaborales" FunctionName="db_RRHHModel.Store.fnOfertasLaborales">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_RRHHModel.fnOfertasLaborales_Result">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fnPerfiles" FunctionName="db_RRHHModel.Store.fnPerfiles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_RRHHModel.fnPerfiles_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fnPostulantes" FunctionName="db_RRHHModel.Store.fnPostulantes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_RRHHModel.fnPostulantes_Result">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="perfil" ColumnName="perfil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

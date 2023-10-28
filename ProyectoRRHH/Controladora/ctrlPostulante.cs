@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,12 @@ namespace Controladora
 {
     public class ctrlPostulante
     {
-        public static List<Datos.Postulantes> Get()
+        public List<fnPostulantes_Result> ListarPostulantes()
         {
             using (Datos.db_RRHHEntities db = new Datos.db_RRHHEntities())
             {
-                return db.Postulantes.ToList();
+                List<fnPostulantes_Result> lst = db.fnPostulantes().ToList();
+                return lst;
             }
         }
     }

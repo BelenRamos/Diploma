@@ -284,11 +284,33 @@
       <End Role="Postulantes" EntitySet="Postulantes" />
     </AssociationSet>
     <FunctionImport Name="fnCliente" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnCliente_Result)" />
+    <FunctionImport Name="fnOfertasLaborales" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnOfertasLaborales_Result)" />
+    <FunctionImport Name="fnPerfiles" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnPerfiles_Result)" />
+    <FunctionImport Name="fnPostulantes" IsComposable="true" ReturnType="Collection(db_RRHHModel.fnPostulantes_Result)" />
   </EntityContainer>
   <ComplexType Name="fnCliente_Result">
     <Property Type="Int32" Name="id" Nullable="true" />
     <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="mail" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="telefono" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="fnOfertasLaborales_Result">
+    <Property Type="Int32" Name="numero" Nullable="true" />
+    <Property Type="String" Name="titulo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="fnPerfiles_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="fnPostulantes_Result">
+    <Property Type="Int32" Name="numero" Nullable="true" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="apellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="perfil" Nullable="true" MaxLength="30" />
   </ComplexType>
 </Schema>

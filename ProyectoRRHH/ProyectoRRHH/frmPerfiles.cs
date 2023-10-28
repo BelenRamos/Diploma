@@ -18,7 +18,19 @@ namespace ProyectoRRHH
             InitializeComponent();
         }
 
+        private void frmPerfiles_Load(object sender, EventArgs e)
+        {
+            // Configurar el DataGridView
 
+            dgvPerfiles.Dock = DockStyle.Fill;
+            this.Controls.Add(dgvPerfiles);
 
+            // Llamar al método ListarClientes
+            ctrlPerfil controladora = new ctrlPerfil();
+            var listaClientes = controladora.ListarPerfiles();
+
+            // Asignar la lista al DataSource del DataGridView
+            dgvPerfiles.DataSource = listaClientes;
+        }
     }
 }

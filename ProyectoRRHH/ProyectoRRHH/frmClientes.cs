@@ -21,12 +21,12 @@ namespace ProyectoRRHH
         private void frmClientes_Load(object sender, EventArgs e)
         {
             // Configurar el DataGridView
-            dgvClientes = new DataGridView();
+            
             dgvClientes.Dock = DockStyle.Fill;
             this.Controls.Add(dgvClientes);
 
             // Llamar al método ListarClientes
-            ctrlClientes controladora = new ctrlClientes();
+            ctrlCliente controladora = new ctrlCliente();
             var listaClientes = controladora.ListarClientes();
 
             // Asignar la lista al DataSource del DataGridView

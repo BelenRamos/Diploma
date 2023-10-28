@@ -46,5 +46,23 @@ namespace Datos
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnCliente_Result>("[db_RRHHEntities].[fnCliente]()");
         }
+    
+        [DbFunction("db_RRHHEntities", "fnOfertasLaborales")]
+        public virtual IQueryable<fnOfertasLaborales_Result> fnOfertasLaborales()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnOfertasLaborales_Result>("[db_RRHHEntities].[fnOfertasLaborales]()");
+        }
+    
+        [DbFunction("db_RRHHEntities", "fnPerfiles")]
+        public virtual IQueryable<fnPerfiles_Result> fnPerfiles()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnPerfiles_Result>("[db_RRHHEntities].[fnPerfiles]()");
+        }
+    
+        [DbFunction("db_RRHHEntities", "fnPostulantes")]
+        public virtual IQueryable<fnPostulantes_Result> fnPostulantes()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnPostulantes_Result>("[db_RRHHEntities].[fnPostulantes]()");
+        }
     }
 }
